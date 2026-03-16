@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky's Free App Builder</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; text-align: center; padding: 50px; }
+        .container { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: inline-block; width: 90%; max-width: 500px; }
+        h1 { color: #833ab4; }
+        input, select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+        button { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; border: none; padding: 15px 30px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%; font-size: 16px; }
+        button:hover { opacity: 0.9; }
+        #status { margin-top: 20px; color: #28a745; font-weight: bold; display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lucky App Builder 🚀</h1>
+        <p>Apna free app banayein ek click mein!</p>
+        <input type="text" id="appName" placeholder="App ka naam likhein (e.g. MyInsta)">
+        <select id="appType">
+            <option value="social">Social Media App</option>
+            <option value="chat">Chatting App</option>
+            <option value="photo">Photo Editor</option>
+        </select>
+        <input type="color" id="appColor" title="App ka color chunein">
+        <button onclick="generateApp()">App Banayein (Build Now)</button>
+        <div id="status">Kaam shuru ho gaya hai... App build ho raha hai! ⚙️</div>
+    </div>
+    <script>
+        function generateApp() {
+            var name = document.getElementById('appName').value;
+            if(name == "") {
+                alert("Pehle app ka naam toh likho Lucky bhai!");
+                return;
+            }
+            document.getElementById('status').style.display = 'block';
+            setTimeout(function() {
+                alert("Mubarak ho! " + name + " app ka dhancha taiyar hai. Asli APK file ke liye server setup ki zaroorat hai.");
+                document.getElementById('status').innerText = "App Structure Created Successfully!";
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
